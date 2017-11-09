@@ -397,11 +397,11 @@ DFRobot_Display    |  https://github.com/DFRobot/DFRobot_Display   | must
 
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-FireBeetle-ESP32  |      ¡Ì       |             |            | 
-FireBeetle-ESP8266  |      ¡Ì       |             |            | 
-FireBeetle-BLE4.1 |       ¡Ì      |             |            | 
-Arduino uno |       ¡Ì      |             |            | 
-Arduino leonardo |      ¡Ì       |             |            | 
+FireBeetle-ESP32  |      âˆš       |             |            | 
+FireBeetle-ESP8266  |      âˆš       |             |            | 
+FireBeetle-BLE4.1 |       âˆš      |             |            | 
+Arduino uno |       âˆš      |             |            | 
+Arduino leonardo |      âˆš       |             |            | 
 
 ## History
 
