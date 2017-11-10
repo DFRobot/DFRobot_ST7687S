@@ -389,7 +389,7 @@ void displaySleepOUT(void);
 
 ## Depends
 
-MCU                |                     URL                       | Remarks
+Projects           |                     URL                       | Remarks
 ------------------ | :-------------------------------------------: | -----------
 DFRobot_Display    |  https://github.com/DFRobot/DFRobot_Display   | must
 
