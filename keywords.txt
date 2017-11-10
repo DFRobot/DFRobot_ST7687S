@@ -1,0 +1,6 @@
+DFRobot_ILI9488_SPI	KEYWORD1
+
+displayON	KEYWORD2
+displayOFF	KEYWORD2
+displaySleepIN	KEYWORD2
+displaySleepOUT	KEYWORD2
