@@ -1,9 +1,16 @@
 # ST7687S
-The ST7687S is a driver & controller LSI for 65K color graphic dot-matrix liquid crystal display systems. It generates 384
-Segment and 128 Common driver circuits. This chip is connected directly to a microprocessor, accepts Serial Peripheral
-Interface (SPI) or 8-bit parallel display data and stores in an on-chip display data RAM. It performs display data RAM
-read/write operation with no external operating clock to minimize power consumption. In addition, because it contains
-power supply circuits necessary to drive liquid crystal, it is possible to make a display system with the fewest components.
+2.2-inch LCD display screen (round screen), dot matrix 128 * 128 degree HD analysis, commonly used on mobile phones, watches, instruments, medical setting, digital, industrial products in. Compatible with TFT 8K3963FPC, IC is ST7687S, without TP , 30PIN welded.
+LCD type TFT TRANSMISSIVE
+Viewing direction 12:00 O 'Clock 6:00 O' Clock
+(Good Viewing)
+Module area (WXHXT) 40.80X47.70 X 2.50 mm3
+Viewing area (Φ) 37.50 mm
+Active area (Φ) 35.10 mm
+Number of Dots 220RGB X 220
+Pixel pitch (W 'H) 0.156 X 0.156 mm2
+Driver IC ST7687S
+Interface Type System parallel interface
+Input voltage 2.8
 
 ## DFRobot_ST7687S Library for Arduino
 ---------------------------------------------------------
