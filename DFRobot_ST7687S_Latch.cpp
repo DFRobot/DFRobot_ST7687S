@@ -23,11 +23,10 @@ static void hc595_writeRCK(uint8_t value)
 
 sHC595_t sHC595;
 
-DFRobot_ST7687S_Latch::DFRobot_ST7687S_Latch(uint8_t pin_cs_, uint8_t pin_cd_,uint8_t pin_wr_, uint8_t pin_rst_, uint8_t pin_rck_)
+DFRobot_ST7687S_Latch::DFRobot_ST7687S_Latch(uint8_t pin_cs_, uint8_t pin_cd_,uint8_t pin_wr_, uint8_t pin_rck_)
 {
   pin_cs = pin_cs_;
   pin_cd = pin_cd_;
-  pin_rst = pin_rst_;
   pin_wr = pin_wr_;
   pin_rck = pin_rck_;
   sHC595.pDelay = hc595_delayUS;
@@ -39,8 +38,6 @@ DFRobot_ST7687S_Latch::DFRobot_ST7687S_Latch(uint8_t pin_cs_, uint8_t pin_cd_,ui
   digitalWrite(pin_cs, 1);
   pinMode(pin_cd, OUTPUT);
   digitalWrite(pin_cd, 1);
-  pinMode(pin_rst, OUTPUT);
-  digitalWrite(pin_rst, 1);
   pinMode(pin_rck, OUTPUT);
   digitalWrite(pin_rck, 1);
   pinMode(pin_wr, OUTPUT);
@@ -51,9 +48,6 @@ DFRobot_ST7687S_Latch::DFRobot_ST7687S_Latch(uint8_t pin_cs_, uint8_t pin_cd_,ui
 int16_t DFRobot_ST7687S_Latch::begin(void)
 {
   _DEBUG_PRINT("\nST7687S begin");
-  digitalWrite(pin_rst, 0);
-  delay(20);
-  digitalWrite(pin_rst, 1);
   delay(120);
 	
   writeCmd(0xd7);
@@ -174,7 +168,7 @@ void DFRobot_ST7687S_Latch::drawPixel(int16_t x, int16_t y, uint16_t color)
 
 void DFRobot_ST7687S_Latch::writeCmd(uint8_t cmd)
 {
-  ST7687S_SPIBEGIN(40000000);
+  ST7687S_SPIBEGIN(4000000);
   digitalWrite(pin_cd, 0);
   digitalWrite(pin_cs, 0);
   HC595_writeReg(&sHC595 ,cmd, 1);
@@ -188,7 +182,7 @@ void DFRobot_ST7687S_Latch::writeCmd(uint8_t cmd)
 
 void DFRobot_ST7687S_Latch::writeDat(uint8_t dat)
 {
-  ST7687S_SPIBEGIN(40000000);
+  ST7687S_SPIBEGIN(4000000);
   digitalWrite(pin_cd, 1);
   digitalWrite(pin_cs, 0);
   HC595_writeReg(&sHC595, dat, 1);
@@ -202,7 +196,7 @@ void DFRobot_ST7687S_Latch::writeDat(uint8_t dat)
 
 void DFRobot_ST7687S_Latch::writeDatBytes(uint8_t* pDat, uint16_t count)
 {
-  ST7687S_SPIBEGIN(40000000);
+  ST7687S_SPIBEGIN(4000000);
   digitalWrite(pin_cd, 1);
   digitalWrite(pin_cs, 0);
   while(count --) {

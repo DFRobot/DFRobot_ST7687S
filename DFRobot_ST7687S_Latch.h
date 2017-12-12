@@ -11,13 +11,13 @@
 class DFRobot_ST7687S_Latch : public DFRobot_ST7687S
 {
   public:
-    DFRobot_ST7687S_Latch(uint8_t pin_cs, uint8_t pin_cd, uint8_t pin_wr, uint8_t pin_rst, uint8_t pin_rck);
+    DFRobot_ST7687S_Latch(uint8_t pin_cs, uint8_t pin_cd, uint8_t pin_wr, uint8_t pin_rck);
   
     int16_t     begin();
     void        drawPixel(int16_t x, int16_t y, uint16_t color);
 
   private:
-    uint8_t     pin_cs, pin_cd, pin_wr, pin_rst, pin_rck;
+    uint8_t     pin_cs, pin_cd, pin_wr, pin_rck;
   
     void        writeCmd(uint8_t cmd);
     void        writeDat(uint8_t dat);

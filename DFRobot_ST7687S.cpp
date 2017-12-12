@@ -5,7 +5,7 @@ DFRobot_ST7687S::DFRobot_ST7687S(void) :
                  DFRobot_Display(128, 128)
 {
   setDisplayShape(eSHAPE_CIRCLE);
-  setOrign(0, 0);
+  setOrign(64, 64);
 }
 
 
@@ -20,12 +20,6 @@ void DFRobot_ST7687S::setCursorAddr(int16_t x0, int16_t y0, int16_t x1, int16_t 
 }
 
 
-void DFRobot_ST7687S::writeToRam(void)
-{
-  writeCmd(0x2c);
-}
-
-
 void DFRobot_ST7687S::fillScreen(uint16_t color)
 {
   uint8_t i, j;
@@ -36,7 +30,7 @@ void DFRobot_ST7687S::fillScreen(uint16_t color)
 }
 
 
-void DFRobot_ST7687S::drawVLine(int16_t x, int16_t y, int16_t height, uint16_t color)
+void DFRobot_ST7687S::drawVLine(int16_t x, int16_t y, int16_t height_, uint16_t color)
 {
   _DEBUG_PRINT("\n  drawVLine at :");
   _DEBUG_PRINTVAR(x, DEC);
@@ -45,48 +39,48 @@ void DFRobot_ST7687S::drawVLine(int16_t x, int16_t y, int16_t height, uint16_t c
   _DEBUG_PRINT(" ");
   _DEBUG_PRINTVAR(width, DEC);
   
-  if(limitVLine(x, y, height) < 0) {return;}
-  setCursorAddr(x, y, x, y + height - 1);
+  if(limitVLine(x, y, height_) < 0) {return;}
+  setCursorAddr(x, y, x, y + height_ - 1);
   writeToRam();
-  writeRepeatPixel(color, height, 1);
+  writeRepeatPixel(color, height_, 1);
 }
 
 
-void DFRobot_ST7687S::drawHLine(int16_t x, int16_t y, int16_t width, uint16_t color)
+void DFRobot_ST7687S::drawHLine(int16_t x, int16_t y, int16_t width_, uint16_t color)
 {
   _DEBUG_PRINT("\n  drawHLine at :");
   _DEBUG_PRINTVAR(x, DEC);
   _DEBUG_PRINT(" ");
   _DEBUG_PRINTVAR(y, DEC);
   _DEBUG_PRINT(" ");
-  _DEBUG_PRINTVAR(width, DEC);
+  _DEBUG_PRINTVAR(width_, DEC);
   
-  if(limitHLine(x, y, height) < 0) {return;}
-  setCursorAddr(x, y, x + width - 1, y);
+  if(limitHLine(x, y, width_) < 0) {Serial.print("drawHLine error \n");return;}
+  setCursorAddr(x, y, x + width_ - 1, y);
   writeToRam();
-  writeRepeatPixel(color, width, 1);
+  writeRepeatPixel(color, width_, 1);
 }
 
 
-void DFRobot_ST7687S::displayON(void)
+inline void DFRobot_ST7687S::displayON(void)
 {
   writeCmd(0x29);
 }
 
 
-void DFRobot_ST7687S::displayOFF(void)
+inline void DFRobot_ST7687S::displayOFF(void)
 {
   writeCmd(0x28);
 }
 
 
-void DFRobot_ST7687S::displaySleepIN(void)
+inline void DFRobot_ST7687S::displaySleepIN(void)
 {
   writeCmd(0x10);
 }
 
 
-void DFRobot_ST7687S::displaySleepOUT(void)
+inline void DFRobot_ST7687S::displaySleepOUT(void)
 {
   writeCmd(0x11);
 }

@@ -19,7 +19,7 @@ class DFRobot_ST7687S : public DFRobot_Display
     void        setCursorAddr(int16_t x0, int16_t y0, int16_t x1, int16_t y1);
     void        drawHLine(int16_t x, int16_t y, int16_t width, uint16_t color);
     void        drawVLine(int16_t x, int16_t y, int16_t height, uint16_t color);
-    void        writeToRam(void);
+    void        writeToRam(void) {writeCmd(0x2c);}
     
     void        displayON(void);
     void        displayOFF(void);
