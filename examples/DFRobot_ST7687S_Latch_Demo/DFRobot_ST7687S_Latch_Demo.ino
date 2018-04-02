@@ -41,6 +41,7 @@ void loop(void)
   tft.fillScreen(DISPLAY_BLACK);
   tft.setTextColor(DISPLAY_WHITE);
   tft.setTextSize(2);
+  tft.setCursor(60, 60);
   tft.print("fire");
   delay(1000);
 }
