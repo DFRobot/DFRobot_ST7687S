@@ -197,6 +197,9 @@ void DFRobot_ST7687S_Latch::writeDat(uint8_t dat)
 void DFRobot_ST7687S_Latch::writeDatBytes(uint8_t* pDat, uint16_t count)
 {
   ST7687S_SPIBEGIN(4000000);
+  #ifdef __ets__
+    ESP.wdtFeed();
+  #endif
   digitalWrite(pin_cd, 1);
   digitalWrite(pin_cs, 0);
   while(count --) {
