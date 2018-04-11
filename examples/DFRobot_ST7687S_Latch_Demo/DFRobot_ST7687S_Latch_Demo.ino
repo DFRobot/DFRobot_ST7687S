@@ -2,12 +2,12 @@
 #include "DFRobot_Character.h"
 
 #ifdef __AVR__
-uint8_t pin_cs = 3, pin_cd = 5, pin_wr = 6, pin_rck = 7;
+uint8_t pin_cs = 3, pin_rs = 5, pin_wr = 6, pin_lck = 7;
 #else
-uint8_t pin_cs = D3, pin_cd = D5, pin_wr = D6, pin_rck = D7;
+uint8_t pin_cs = D3, pin_rs = D5, pin_wr = D6, pin_lck = D7;
 #endif
 
-DFRobot_ST7687S_Latch tft(pin_cs, pin_cd, pin_wr, pin_rck);
+DFRobot_ST7687S_Latch tft(pin_cs, pin_rs, pin_wr, pin_lck);
 
 
 void setup(void)
