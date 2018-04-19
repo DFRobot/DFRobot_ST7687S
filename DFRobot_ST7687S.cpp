@@ -6,6 +6,7 @@ DFRobot_ST7687S::DFRobot_ST7687S(void) :
 {
   setDisplayShape(eSHAPE_CIRCLE);
   setOrign(64, 64);
+  setCursor(64, 64);
 }
 
 
