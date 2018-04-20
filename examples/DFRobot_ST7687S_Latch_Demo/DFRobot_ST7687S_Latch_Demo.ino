@@ -23,7 +23,6 @@
  */
 
 #include "DFRobot_ST7687S_Latch.h"
-#include "DFRobot_Character.h"
 
 #ifdef __AVR__
 uint8_t pin_cs = 3, pin_rs = 5, pin_wr = 6, pin_lck = 7;
@@ -63,7 +62,7 @@ void loop(void)
   tft.fillScreen(DISPLAY_BLACK);
   tft.setTextColor(DISPLAY_WHITE);  //set text color to white
   tft.setTextBackground(DISPLAY_BLACK);  //set text background to black
-  tft.setTextSize(2);  //2 * text size
+  tft.setTextSize(2);  //2 * text size, default text size: 6 * 8
   tft.setCursor(tft.width / 2, tft.height / 2);
   tft.print("fire");
   delay(1000);
