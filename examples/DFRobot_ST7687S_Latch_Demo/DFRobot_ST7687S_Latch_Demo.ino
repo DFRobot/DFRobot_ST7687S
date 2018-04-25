@@ -48,7 +48,7 @@ void loop(void)
   tft.fillScreen(DISPLAY_BLACK);
   tft.drawCircle(0, 0, 20, DISPLAY_GREEN);  //draw circle
   tft.drawRect(-20, -20, 40, 40, DISPLAY_CYAN);  //draw rectangle
-  tft.drawLine(-64, -64, 64, 64, DISPLAY_RED);  //draw line
+  tft.drawLine(-64, 64, 64, -64, DISPLAY_RED);  //draw line
   tft.drawHLine(-64, 0, 128, DISPLAY_WHITE);  //draw horizontal line
   tft.drawVLine(0, -64, 128, DISPLAY_WHITE);  //draw vertical line
   tft.drawTriangle(-20, -50, 0, 0, 50, 20, DISPLAY_ORANGE);  //draw triangle
