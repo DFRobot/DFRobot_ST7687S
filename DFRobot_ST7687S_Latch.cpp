@@ -222,5 +222,3 @@ void DFRobot_ST7687S_Latch::writeRepeatPixel(uint16_t color, uint16_t count, uin
     writeDatBytes(colorBuf, 2);
   }
 }
-
-
