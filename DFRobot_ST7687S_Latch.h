@@ -4,8 +4,16 @@
 #include "DFRobot_ST7687S.h"
 #include "HC595.h"
 
-#define ST7687S_SPIBEGIN(x)         SPI.begin();SPI.beginTransaction(SPISettings(x, MSBFIRST, SPI_MODE0))
-#define ST7687S_SPIEND()            SPI.endTransaction()
+// __GNUC__ 、__GNUC_MINOR__ 、__GNUC_PATCHLEVEL__
+
+#if ((__GNUC__ > 3) && (__GNUC_MINOR__ <= 3))
+  #define ST7687S_SPIBEGIN(x)       SPI.begin()
+  #define ST7687S_SPIEND()          SPI.end()
+#else
+  #define ST7687S_SPIBEGIN(x)       SPI.begin();SPI.beginTransaction(SPISettings(x, MSBFIRST, SPI_MODE0))
+  #define ST7687S_SPIEND()          SPI.endTransaction()
+#endif
+
 
 
 class DFRobot_ST7687S_Latch : public DFRobot_ST7687S

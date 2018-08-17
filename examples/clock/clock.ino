@@ -25,6 +25,7 @@
 #include "DFRobot_ST7687S_Latch.h"
 #include "DFRobot_Display_Clock.h"
 #include <TimeLib.h>
+#include "SPI.h"
 
 #ifdef __AVR__
 uint8_t pin_cs = 3, pin_rs = 5, pin_wr = 6, pin_lck = 7;
