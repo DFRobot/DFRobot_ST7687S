@@ -129,7 +129,7 @@ int16_t DFRobot_ST7687S_Latch::begin(ST7687S_Rotation rotation)
     case ST7687S_Rotation_0: writeDat(0x80);
     case ST7687S_Rotation_90: writeDat(0xE0);
     case ST7687S_Rotation_180: writeDat(0x40);
-    case ST7687S_Rotation_270: writeDat(0x80);
+    case ST7687S_Rotation_270: writeDat(0x20);
     default: writeDat(0x80);
   }
 
