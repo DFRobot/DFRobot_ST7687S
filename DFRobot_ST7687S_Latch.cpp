@@ -44,8 +44,7 @@ DFRobot_ST7687S_Latch::DFRobot_ST7687S_Latch(uint8_t pin_cs_, uint8_t pin_cd_,ui
   digitalWrite(pin_wr, 1);
 }
 
-
-int16_t DFRobot_ST7687S_Latch::begin(void)
+int16_t DFRobot_ST7687S_Latch::begin(ST7687S_Rotation rotation)
 {
   _DEBUG_PRINT("\nST7687S begin");
   delay(120);
@@ -124,9 +123,15 @@ int16_t DFRobot_ST7687S_Latch::begin(void)
 
   writeCmd(0x3A);
   writeDat(0x05);
-
+  
   writeCmd(0x36);
-  writeDat(0x80); //0xc8
+  switch(rotation) {
+    case ST7687S_Rotation_0: writeDat(0x80);
+    case ST7687S_Rotation_90: writeDat(0xE0);
+    case ST7687S_Rotation_180: writeDat(0x40);
+    case ST7687S_Rotation_270: writeDat(0x80);
+    default: writeDat(0x80);
+  }
 
   writeCmd(0xB0);
   writeDat(0x7F);
@@ -155,6 +160,10 @@ int16_t DFRobot_ST7687S_Latch::begin(void)
   return BEGIN_WAR_NOTEST;
 }
 
+int16_t DFRobot_ST7687S_Latch::begin()
+{
+  DFRobot_ST7687S_Latch::begin(ST7687S_Rotation_0);
+}
 
 void DFRobot_ST7687S_Latch::drawPixel(int16_t x, int16_t y, uint16_t color)
 {
