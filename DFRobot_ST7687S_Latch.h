@@ -14,14 +14,15 @@
   #define ST7687S_SPIEND()          SPI.endTransaction()
 #endif
 
-
+enum ST7687S_Rotation {ST7687S_Rotation_0, ST7687S_Rotation_90, ST7687S_Rotation_180, ST7687S_Rotation_270 };
 
 class DFRobot_ST7687S_Latch : public DFRobot_ST7687S
 {
   public:
     DFRobot_ST7687S_Latch(uint8_t pin_cs, uint8_t pin_cd, uint8_t pin_wr, uint8_t pin_rck);
-  
-    int16_t     begin();
+
+    int16_t     begin(ST7687S_Rotation rotation);  
+    virtual int16_t     begin();
     void        drawPixel(int16_t x, int16_t y, uint16_t color);
 
   private:
