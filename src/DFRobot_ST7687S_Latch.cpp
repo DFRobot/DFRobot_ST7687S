@@ -1,3 +1,13 @@
+/*!
+ * @file DFRobot_ST7687S_Latch.cpp
+ * @brief Define the infrastructure of the DFRobot_ST7687S_Latch class
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @License     The MIT License (MIT)
+ * @author [fengli](li.feng@dfrobot.com)
+ * @version  V1.0
+ * @date  2022-03-25
+ * @url https://github.com/DFRobot/DFRobot_ST7687S_Latch
+ */
 #include "DFRobot_ST7687S_Latch.h"
 
 static uint8_t        HC595_pin_rck = 0;

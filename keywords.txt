@@ -1,6 +1,31 @@
-DFRobot_ST7687S_Latch	KEYWORD1
+#######################################
+# Syntax Coloring DFRobot_ST7687S_Latch
+#######################################
 
-displayON	KEYWORD2
-displayOFF	KEYWORD2
-displaySleepIN	KEYWORD2
-displaySleepOUT	KEYWORD2
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+DFRobot_ST7687S	KEYWORD1
+DFRobot_ST7687S_Latch	KEYWORD1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################	
+
+begin	KEYWORD2
+drawPixel	KEYWORD2
+
+writeCmd	KEYWORD2
+writeDat	KEYWORD2
+writeDatBytes	KEYWORD2
+writeRepeatPixel	KEYWORD2
+setCursorAddr	KEYWORD2
+drawHLine	KEYWORD2
+drawVLine	KEYWORD2
+writeToRam	KEYWORD2
+fillScreen	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+
+#######################################
+
+

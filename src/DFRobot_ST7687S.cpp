@@ -1,3 +1,14 @@
+
+/*!
+ * @file DFRobot_ST7687S.cpp
+ * @brief Define the infrastructure of the DFRobot_ST7687S class
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @License     The MIT License (MIT)
+ * @author [fengli](li.feng@dfrobot.com)
+ * @version  V1.0
+ * @date  2022-03-25
+ * @url https://github.com/DFRobot/DFRobot_ST7687S
+ */
 #include "DFRobot_ST7687S.h"
 
 
